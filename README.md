@@ -11,7 +11,8 @@ Syth is a strong typed language with a python like syntax
     const int a = 9
     ```
 
-#### Automatic type assignment and dynamically typed  variables
+#### Automatic type assignment and dynamically typed  variables 
+# LIKELY NOT TO BE ADDED \\/ \\/ \\/
 ## Auto type assignment
 - Automatic typing can be done with the `"var"` keyword 
     ```go
@@ -38,6 +39,7 @@ Syth is a strong typed language with a python like syntax
     a = true
     #This is valid
     ```
+# LIKELY NOT TO BE ADDED ^^^^
 ## Full assignment syntax
 ```
 (const) <type> <name> <asignmentOperator> <value>
