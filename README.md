@@ -1,48 +1,52 @@
 # Codename: Syth
 Syth is a strong typed language with a python like syntax
 # Assignment
-## Variables and constants
-- Variables can be declared as such
+## Variables
+- Variables are declared using `var`
+    ```go
+    var int a = 9
+    ```
+- Using var is optional and not declaring a variable assignment type will be the same as is using var
+- Vars is mostly used for clarity
     ```py
     int a = 9
     ```
+## Constants
 - Constants are declared using `"const"`
     ```go
     const int a = 9
     ```
+- Constants only allow assignment of constant values
+    ```go
+    int b = 9
+    const int a = b
+    #Error b is not constant
+    ```
+    ```go
+    const int b = 9
+    const int a = b
+    #No Error b is constant
+    ```
+- You must initialize the constant with a value
+    ``` go
+    const int a
+    #Error a is not initialized 
+    ```
+## Snapshot
+- `"snap"` variable assigment are a mix between constant and variables allowing essentially working as a snapshot of the current values and not allowing further changes
+- This comes at a significant performanace cost as it gets a copy of the current values no matter the type, especially for data collections.
+    ```go
+    int a = 9
+    snap int b = a
+    print(b) -> "9"
+    a = 10
+    print(b) -> "9"
+    ```
 
-#### Automatic type assignment and dynamically typed  variables 
-# LIKELY NOT TO BE ADDED \\/ \\/ \\/
-## Auto type assignment
-- Automatic typing can be done with the `"var"` keyword 
-    ```go
-    var a = 9
-    ```
-- Please note that attempting to assign a different type to the initial assigned type **will cause an error**
-    ```go
-    var a = 9
-    a = true
-    #Error
-    ```
-- You can use `":="` as a shorthand for `"var"` and type assignment 
-    ```go
-    a := 9
-    ```
-## Dynamic type assignment
-- Dynamically typed variables can be declared using the `"dy"` keyword
-    ```go
-    dy a = 9
-    ```
-- As apposed to the `"var"` keyword attempting to assign a type to the variable that differs from the initiallly assigned type *does not cause an error*
-    ```go
-    dy a = 9
-    a = true
-    #This is valid
-    ```
-# LIKELY NOT TO BE ADDED ^^^^
+
 ## Full assignment syntax
 ```
-(const) <type> <name> <asignmentOperator> <value>
+(var assignment type) <type> <name> <asignmentOperator> <value>
 ```
 # Core Datatypes
 - bool
@@ -51,23 +55,29 @@ Syth is a strong typed language with a python like syntax
 - double
 - str
 # Core Data Colections
-## Lists
-- Lists in Syth are a collection of values
-- Lists in Syth allow for multiple type allowence 
+## Arrays
+- Array are data colections with a size
+- Single typed lists
     ```py
-    list[int, str] strInt = [0,"a","b",1]
-    ```
-- Lists in Syth can also have sizes
-   ```py
-   list[int, str,3] sizedList = [0,"a","b"]
-   ```
-- Both type allowence and size are optional you can have a list with a infinite size that allows all types
-    ```py
-    list anytype = [0,0.0,"a",true]
+    list[int] intList = [0,1,2]
     ```
 - ### Full List Syntax 
     ```
-    list[allowed types,size] <name> <assignment operator> [value,value,...]
+    list[allowed types] <name> <assignment operator> [value,value,...]
+    ```
+## Lists
+- Lists in Syth are data collections without a size this is in terms similar to Linked lists in other languages
+- Lists in Syth allow for multiple type allowence 
+    ```py
+    list[int|str] strInt = [0,"a","b",1]
+    ```
+- Single typed lists
+    ```py
+    list[int] intList = [0,1,2]
+    ```
+- ### Full List Syntax 
+    ```
+    list[allowed types] <name> <assignment operator> [value,value,...]
     ```
 ## Dictionaries
 - Dictionaries are collections of Key Value Pairs
