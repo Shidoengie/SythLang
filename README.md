@@ -7,7 +7,7 @@ Syth is a strong typed language with a python like syntax
     var int a = 9
     ```
 - Using var is optional and not declaring a variable assignment type will be the same as is using var
-- Vars is mostly used for clarity
+- Var is mostly used for clarity
     ```py
     int a = 9
     ```
@@ -55,7 +55,7 @@ Syth is a strong typed language with a python like syntax
 - double
 - str
 # Core Data Colections
-## Arrays
+## Arrays WIP
 - Array are data colections with a size
 - Single typed lists
     ```py
@@ -71,10 +71,10 @@ Syth is a strong typed language with a python like syntax
     ```py
     list[int] intList = [0,1,2]
     ```
-- untyped lists
-  ```py
-  list[]
-  ```
+- untyped lists WIP
+    ```py
+    list[] anytype = [0,0.0,"a",true]
+    ```
 - Lists in Syth allow for multiple type allowence 
     ```py
     list[int|str] strInt = [0,"a","b",1]
