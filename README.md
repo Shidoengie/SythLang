@@ -67,13 +67,17 @@ Syth is a strong typed language with a python like syntax
     ```
 ## Lists
 - Lists in Syth are data collections without a size this is in terms similar to Linked lists in other languages
-- Lists in Syth allow for multiple type allowence 
-    ```py
-    list[int|str] strInt = [0,"a","b",1]
-    ```
 - Single typed lists
     ```py
     list[int] intList = [0,1,2]
+    ```
+- untyped lists
+  ```py
+  list[]
+  ```
+- Lists in Syth allow for multiple type allowence 
+    ```py
+    list[int|str] strInt = [0,"a","b",1]
     ```
 - ### Full List Syntax 
     ```
@@ -87,7 +91,23 @@ Syth is a strong typed language with a python like syntax
    ```py
    dict[str:int] users = {"bob":1,"joe":2}
    ```
+
 - ### Full Dictionary syntax
     ```
     dict[keytype:valuetype] <name> <assignment operator> {key:value,(...kvp)}
     ```
+## Enums
+- Enums are a set of named constants that can hold integer values, enums can be named or unnamed.
+- Named enum :
+  ```cs
+  enum namedEnum { ELEMENT1:0 , ELEMENT2:2 }
+  ```
+- Unnamed enum :
+  ```cs
+  enum { ELEMENT1:0 , ELEMENT2:2 }
+  ```
+- Enums dont need to hold values you could have a enum that doesnt hold a value
+  ```cs
+  enum noValueEnum { ELEMENT1 , ELEMENT2 }
+  ```
+- Enums have a syntax similar to Dictionaries in how they are declared
