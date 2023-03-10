@@ -57,27 +57,28 @@ Syth is a strong typed language with a python like syntax
 # Core Data Colections
 ## Arrays WIP
 - Array are data colections with a size
-- Single typed lists
-    ```py
-    list[int] intList = [0,1,2]
+- Not giving a 
+- Typed Arrays
+    ```cs
+    array[int]{3} intarr = [0,1,2]
     ```
+- Untyped Arrays WIP
+  ```cs
+    array[any]{3} anyarr = [0,"a",true]
+  ```
 - ### Full List Syntax 
     ```
-    list[allowed types] <name> <assignment operator> [value,value,...]
+    list[type] <name> <assignment operator> [value,value,...]
     ```
 ## Lists
 - Lists in Syth are data collections without a size this is in terms similar to Linked lists in other languages
 - Single typed lists
-    ```py
+    ```cs
     list[int] intList = [0,1,2]
     ```
 - untyped lists WIP
     ```py
-    list[] anytype = [0,0.0,"a",true]
-    ```
-- Lists in Syth allow for multiple type allowence 
-    ```py
-    list[int|str] strInt = [0,"a","b",1]
+    list[any] anytype = [0,0.0,"a",true]
     ```
 - ### Full List Syntax 
     ```
