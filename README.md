@@ -57,58 +57,60 @@ Syth is a strong typed language with a python like syntax
 # Core Data Colections
 ## Arrays WIP
 - Array are data colections with a size
-- Not giving a 
+- Not giving a size will result in a error
 - Typed Arrays
     ```cs
-    array[int]{3} intarr = [0,1,2]
+    array<int,3> intarr = [0,1,2]
     ```
 - Untyped Arrays WIP
   ```cs
-    array[any]{3} anyarr = [0,"a",true]
+  array<any,3> anyarr = [0,"a",true]
   ```
-- ### Full List Syntax 
+- ### Full Array Syntax 
     ```
-    list[type] <name> <assignment operator> [value,value,...]
+    array[type,size] <name> <assignment operator> [value,value,...]
     ```
 ## Lists
 - Lists in Syth are data collections without a size this is in terms similar to Linked lists in other languages
 - Single typed lists
-    ```cs
-    list[int] intList = [0,1,2]
+    ```py
+    list<int> intList = [0,1,2]
     ```
 - untyped lists WIP
     ```py
-    list[any] anytype = [0,0.0,"a",true]
+    list<any> anytype = [0,0.0,"a",true]
     ```
 - ### Full List Syntax 
     ```
     list[allowed types] <name> <assignment operator> [value,value,...]
     ```
-## Dictionaries
-- Dictionaries are collections of Key Value Pairs
-- Dictionaries can be defined using the `"dict"` keyword
+## Maps
+- Maps are collections of Key Value Pairs
+- Map can be defined using the `"map"` keyword
 
 - Keys and their values Are separated using `":"` and Key value pairs are separated using `","`
    ```py
-   dict[str:int] users = {"bob":1,"joe":2}
+   map<str:int> users = {"bob":1,"joe":2}
    ```
 
 - ### Full Dictionary syntax
     ```
-    dict[keytype:valuetype] <name> <assignment operator> {key:value,(...kvp)}
+    map[keytype:valuetype] <name> <assignment operator> {key:value,(...kvp)}
     ```
 ## Enums
-- Enums are a set of named constants that can hold integer values, enums can be named or unnamed.
-- Named enum :
+- Enums are a set of named constants that can hold integer values.
+
+- Scoped enum :
   ```cs
   enum namedEnum { ELEMENT1:0 , ELEMENT2:2 }
   ```
-- Unnamed enum :
+- Uscoped enum :
   ```cs
   enum { ELEMENT1:0 , ELEMENT2:2 }
   ```
-- Enums dont need to hold values you could have a enum that doesnt hold a value
+- Enums dont need to hold integer values, by ommiting the integer value in all enum values it will become a enum type.
   ```cs
   enum noValueEnum { ELEMENT1 , ELEMENT2 }
   ```
-- Enums have a syntax similar to Dictionaries in how they are declared
+- Enums have a syntax similar to Maps in how they are declared, you could use a constant map as a sort of enum.
+
